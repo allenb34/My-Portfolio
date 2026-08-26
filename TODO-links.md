@@ -1,65 +1,82 @@
-# TODO — unverified links & missing assets
+# Link state of truth
 
-Everything below is either **live on the site but not independently verified**, or
-**referenced by the site but missing from the repo**. Nothing here should be treated
-as confirmed until the "How to verify" step is completed.
+> **A URL being correct and a URL being publicly reachable are different properties.**
+> Earlier verification confirmed only the first. Every entry here was checked
+> anonymously — real browser User-Agent, redirects followed, the *final* URL judged,
+> and no git credentials in play, because cached credentials are what made
+> `madden-2k-forecaster` look public when it was private.
 
-Rule in force for this repo: **never invent a URL.** GitHub URLs are taken only from a
-project folder's `.git/config` `[remote "origin"]`; deployment URLs only from a repo's
-README or an explicit statement from the author.
+Regenerate this table with:
+
+```bash
+python verify_links.py
+```
+
+It exits non-zero if anything fails, so it can gate a deploy. Run it against the live
+site with `python verify_links.py --base https://allenb34.github.io/My-Portfolio/`.
+
+Last full pass: **2026-08-26 — all 18 checks passed.**
 
 ---
 
-## 1. Unverified deployment URLs (live on the site)
+## External links
 
-These are currently linked from project cards. They were inherited from the previous
-version of the site and could not be confirmed against any repo file.
+| URL | Type | Anonymous status | Final URL | Verified how | Date |
+|---|---|---|---|---|---|
+| `nfl-signing-roi-analyzer.streamlit.app` | deployment | **200** (303→200) | app root | anonymous GET, browser UA, cookie jar; lands on the app | 2026-08-26 |
+| `github.com/allenb34/nfl-signing-roi-analyzer` | repo | **200** | same | remote read from `nfl_signing_roi/.git/config` | 2026-08-26 |
+| `seahawks-homefield-analytics.streamlit.app/12th_Man_Value` | deployment | **200** (303→200) | app root | anonymous GET; page path resolves | 2026-08-26 |
+| `github.com/allenb34/seahawks-homefield-analytics` | repo | **200** | same | remote read from `seahawks-sql-analytics/.git/config` | 2026-08-26 |
+| `madden-2k-forecaster.streamlit.app` | deployment | **200** (303→200) | app root | anonymous GET; made public by author | 2026-08-26 |
+| `github.com/allenb34/madden-2k-forecaster` | repo | **200** | same | remote from `sports-price-forecaster/.git/config`; **folder name ≠ repo name**; was private until 2026-08-26 | 2026-08-26 |
+| `fab-pressure-atlas.lovable.app/` | deployment | **200** | same | anonymous GET | 2026-08-26 |
+| `github.com/allenb34/fab-pressure-atlas` | repo | **200** | same | no local clone; repo existed but was private until 2026-08-26 | 2026-08-26 |
+| `path-water-mazezip--allenb34.replit.app/` | deployment | **200** | same | anonymous GET | 2026-08-26 |
+| `github.com/allenb34/path-water-maze` | repo | **200** | same | local `.git` has **no remote**; confirmed by anonymous fetch, not inferred | 2026-08-26 |
+| `social-proof-badge-readout-we8mad64gry9vbs3ajslyr.streamlit.app/` | deployment | **200** (303→200) | app root | anonymous GET; author-confirmed URL | 2026-08-26 |
+| `github.com/allenb34/social-proof-badge-readout` | repo | **200** | same | remote read from `social-proof-badge-readout/.git/config` | 2026-08-26 |
+| `github.com/allenb34/console-economics` | repo | **200** | same | published 2026-08-26 from local folder that had no `.git`; README renders | 2026-08-26 |
+| `github.com/allenb34/costco-comp-ledger` | repo | **200** | same | remote read from `costco-comp-ledger/.git/config` | 2026-08-26 |
+| `linkedin.com/in/allen-bautista-279778323/` | profile | **200** | same | anonymous GET | 2026-08-26 |
+| `github.com/allenb34` | profile | **200** | same | anonymous GET | 2026-08-26 |
 
-| URL | Card | Why it is unverified | How to verify |
-|---|---|---|---|
-| `https://nfl-signing-roi-analyzer.streamlit.app` | NFL Marquee Player Signing ROI Analyzer | Appears in no file in `nfl_signing_roi/`. README records no deployment URL. | Open the Streamlit Cloud dashboard and copy the real app URL, or confirm the app is not deployed and remove the "Live app" link. |
-| `https://madden-2k-forecaster.streamlit.app` | Sports Price Forecaster | README confirms a deployment exists but records no URL. Folder is `sports-price-forecaster/`, repo is `madden-2k-forecaster`. | Same — read the true URL off Streamlit Cloud. |
-| `https://fab-pressure-atlas.lovable.app/` | FabPressure Risk Atlas | No local repo exists for this project, so nothing on disk corroborates it. | Confirm from the Lovable dashboard. |
+## Relative assets
 
-## 2. Unverified GitHub URLs (live on the site)
+| File | Type | Status | Verified how | Date |
+|---|---|---|---|---|
+| `Allen_Bautista_Resume.pdf` | asset | **present**, 117,621 bytes | author's source re-export, phone number removed at source; 1 page, text extracted and checked | 2026-08-26 |
+| `DiD_Dividend_Study.xlsx` | asset | **present**, 1,438,724 bytes | SHA256 identical to source; opens as a valid 36-member workbook | 2026-08-26 |
 
-| URL | Card | Why it is unverified | How to verify |
-|---|---|---|---|
-| `https://github.com/allenb34/fab-pressure-atlas` | FabPressure Risk Atlas | No local repo — no `.git/config` to read. | `git ls-remote <url>` should exit 0, or check github.com/allenb34?tab=repositories. |
-| `https://github.com/allenb34/console-economics` | Console Economics | `console-economics/` has no `.git` directory at all. | Same. |
-| `https://github.com/allenb34/path-water-maze` | Path: Water. | `path-water-maze/.git` exists but has **no remote configured**. | Add the remote locally, or read the true repo name off GitHub. |
+---
 
-Quick check for all six at once:
+## Known gaps, deliberate
 
-```bash
-for u in nfl-signing-roi-analyzer.streamlit.app madden-2k-forecaster.streamlit.app fab-pressure-atlas.lovable.app; do echo "== $u"; curl -sSI "https://$u" | head -1; done
-for r in fab-pressure-atlas console-economics path-water-maze; do echo "== $r"; git ls-remote "https://github.com/allenb34/$r" >/dev/null 2>&1 && echo OK || echo "404 / no access"; done
-```
+**`Grammys_Campaign_Deck.pdf` — not shipped.** The supplied file is the course
+worksheet with its template scaffolding intact: "delete the options that you do not
+choose" with all four options still listed, "read the instructions on the previous
+slide", two slides headed "LevelUp (Extra Credit)", and a filename of "Copy of Copy of
+Grammys Social Media Project.pptx". Every figure on the Grammys card was checked against
+it and is correct — $150,000 budget, 1,800,000 impressions, CPA $30 vs $15 benchmark,
+CTR 0.25% vs 2% (−87.5%), CPC $2.00 at benchmark, 400% traffic lift against 2.3%
+conversion. The card therefore stands on its own; only the deck button is withheld. The
+anchor is commented out in `index.html` with a restore note — restore it if a cleaned
+deck is produced.
 
-## 3. Assets
+**Supply-Chain Contagion — no repository link, by design.** `supply-chain-contagion/`
+has no `.git`, so there is no remote to cite and the card ships with no GitHub button
+rather than a guessed URL. Add one only after the repo exists and the remote is read
+from `.git/config`.
 
-| File | Referenced from | Status |
-|---|---|---|
-| `Allen_Bautista_Resume.pdf` | nav, hero, closing CTA, footer (4 links) | **Shipped 2026-08-26.** Author re-exported from the source document with the phone number removed there (117,621 bytes, single page). Replaces the earlier hand-edited PDF. All four links return 200. |
-| `Grammys_Campaign_Deck.pdf` | Grammys campaign card | **Not on disk anywhere.** The link block is commented out in `index.html` (markup preserved, not deleted). Restore it once the file is added to the repo root. |
+---
 
-## 4. Supply-Chain Contagion — no repository link, deliberately
+## Two failure modes this file exists to prevent
 
-`supply-chain-contagion/` has no `.git` directory, so there is no remote to cite. The
-card therefore ships with **no GitHub link** rather than a guessed URL. Add one only
-after the repo exists and the remote is read from `.git/config`.
+1. **Cached git credentials.** `git ls-remote` succeeds against a private repo when the
+   caller is authenticated. It is not evidence of public reachability. `madden-2k-forecaster`
+   and `fab-pressure-atlas` both passed that check while returning 404 to everyone else.
 
-## 5. Résumé source document — resolved
-
-The phone number was first removed by editing the PDF directly, which left the source
-document still containing it. Allen has since removed it **at the source** and re-exported;
-that export is what ships now. Verified: text identical to the hand-edited version, all 66
-lines at the same positions (max drift 0.02pt), no phone number.
-
-Note for future exports: `Allen_Bautista_Career_Resume.docx` in the projects folder is an
-**older draft** — no Costco entry, no supply-chain entry, no summary section. Do not export
-the résumé from it. Check any replacement before committing:
-
-```bash
-python -c "import pymupdf,sys; t=pymupdf.open(sys.argv[1])[0].get_text(); print('phone present:', any(x in t for x in ['622-3131','(425)']))" Allen_Bautista_Resume.pdf
-```
+2. **Judging the first hop.** Streamlit routes even public apps through a
+   `share.streamlit.io/-/auth` handshake that sets a session cookie before returning to
+   the app. A checker without a cookie jar never completes that chain and reports a
+   public app as a sign-in wall. `verify_links.py` carries a per-URL cookie jar and
+   judges only where the chain comes to rest.

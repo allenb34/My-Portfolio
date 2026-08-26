@@ -19,6 +19,7 @@ Exits non-zero if anything fails, so it can gate a deploy.
 """
 
 import argparse
+import http.cookiejar
 import os
 import re
 import sys
@@ -38,13 +39,15 @@ except Exception:
 UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
       '(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36')
 TIMEOUT = 10
+# Judged against the FINAL url only. A public Streamlit app also bounces through
+# share.streamlit.io/-/auth to establish a session cookie, so an auth url appearing
+# mid-chain proves nothing -- only where the chain comes to rest does.
 LOGIN_MARKERS = (
     '/-/login',        # Streamlit per-app sign-in
-    '/-/auth',         # Streamlit share.streamlit.io auth bounce
+    '/-/auth',         # auth page as a terminal destination
     '/login',
     '/signin',
     '/session',
-    'redirect_uri=',   # generic OAuth hand-off
 )
 SKIP_HOSTS = ('fonts.googleapis.com', 'fonts.gstatic.com')
 
@@ -66,7 +69,12 @@ class _Tracker(urllib.request.HTTPRedirectHandler):
 def fetch(url):
     """Return (initial_status, final_status, final_url, error)."""
     tracker = _Tracker()
-    opener = urllib.request.build_opener(tracker)
+    # A fresh cookie jar per URL, so each check starts anonymous but can still
+    # complete a redirect handshake the way a browser does. Without this,
+    # Streamlit's session bounce never resolves and a public app looks private.
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(tracker,
+                                         urllib.request.HTTPCookieProcessor(jar))
     req = urllib.request.Request(url, headers={'User-Agent': UA})
     try:
         with opener.open(req, timeout=TIMEOUT) as resp:
