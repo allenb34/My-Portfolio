@@ -40,7 +40,7 @@ for r in fab-pressure-atlas console-economics path-water-maze; do echo "== $r"; 
 
 | File | Referenced from | Status |
 |---|---|---|
-| `Allen_Bautista_Resume.pdf` | nav, hero, closing CTA, footer (4 links) | **Shipped 2026-08-26.** Author-supplied export with the personal phone number removed from the contact line (116,159 bytes, single page). All four links return 200. **Open item — see below.** |
+| `Allen_Bautista_Resume.pdf` | nav, hero, closing CTA, footer (4 links) | **Shipped 2026-08-26.** Author re-exported from the source document with the phone number removed there (117,621 bytes, single page). Replaces the earlier hand-edited PDF. All four links return 200. |
 | `Grammys_Campaign_Deck.pdf` | Grammys campaign card | **Not on disk anywhere.** The link block is commented out in `index.html` (markup preserved, not deleted). Restore it once the file is added to the repo root. |
 
 ## 4. Supply-Chain Contagion — no repository link, deliberately
@@ -49,18 +49,16 @@ for r in fab-pressure-atlas console-economics path-water-maze; do echo "== $r"; 
 card therefore ships with **no GitHub link** rather than a guessed URL. Add one only
 after the repo exists and the remote is read from `.git/config`.
 
-## 5. Résumé source document — phone number will come back
+## 5. Résumé source document — resolved
 
-The phone number was removed by editing the **PDF** directly, because the only
-`.docx` in the projects folder (`Allen_Bautista_Career_Resume.docx`) is an older draft
-— it has no Costco entry, no supply-chain entry and no summary section, so re-exporting
-from it would have regressed the résumé.
+The phone number was first removed by editing the PDF directly, which left the source
+document still containing it. Allen has since removed it **at the source** and re-exported;
+that export is what ships now. Verified: text identical to the hand-edited version, all 66
+lines at the same positions (max drift 0.02pt), no phone number.
 
-That means **the real source document still contains `(425) 622-3131`**. The next export
-from it will reintroduce the number to the site. Remove it at the source, then either
-re-export over `Allen_Bautista_Resume.pdf` or re-run the same edit.
-
-Check any future replacement before committing it:
+Note for future exports: `Allen_Bautista_Career_Resume.docx` in the projects folder is an
+**older draft** — no Costco entry, no supply-chain entry, no summary section. Do not export
+the résumé from it. Check any replacement before committing:
 
 ```bash
 python -c "import pymupdf,sys; t=pymupdf.open(sys.argv[1])[0].get_text(); print('phone present:', any(x in t for x in ['622-3131','(425)']))" Allen_Bautista_Resume.pdf
