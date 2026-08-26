@@ -36,11 +36,11 @@ for u in nfl-signing-roi-analyzer.streamlit.app madden-2k-forecaster.streamlit.a
 for r in fab-pressure-atlas console-economics path-water-maze; do echo "== $r"; git ls-remote "https://github.com/allenb34/$r" >/dev/null 2>&1 && echo OK || echo "404 / no access"; done
 ```
 
-## 3. Missing assets
+## 3. Assets
 
 | File | Referenced from | Status |
 |---|---|---|
-| `Allen_Bautista_Resume.pdf` | nav, hero, closing CTA, footer (4 links) | **Pending — author is exporting a fresh PDF.** Links are wired and will resolve the moment this file is dropped in the repo root. Until then these four links 404. Note `Allen_Bautista_Career_Resume.docx` was modified 2026-08-25, 19 days after `Allen_Bautista_Career_Resume.pdf` (2026-08-06) — export from the `.docx` to avoid shipping a stale résumé. |
+| `Allen_Bautista_Resume.pdf` | nav, hero, closing CTA, footer (4 links) | **Resolved 2026-08-26.** Fresh export supplied by the author (2026-08-25 15:22, 117,741 bytes, single page) and committed to the repo root. All four links return 200. |
 | `Grammys_Campaign_Deck.pdf` | Grammys campaign card | **Not on disk anywhere.** The link block is commented out in `index.html` (markup preserved, not deleted). Restore it once the file is added to the repo root. |
 
 ## 4. Supply-Chain Contagion — no repository link, deliberately
