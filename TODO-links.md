@@ -2,7 +2,7 @@
 
 > **A URL being correct and a URL being publicly reachable are different properties.**
 > Earlier verification confirmed only the first. Every entry here was checked
-> anonymously — real browser User-Agent, redirects followed, the *final* URL judged,
+> anonymously, using a real browser User-Agent, redirects followed, the *final* URL judged,
 > and no git credentials in play, because cached credentials are what made
 > `madden-2k-forecaster` look public when it was private.
 
@@ -15,7 +15,7 @@ python verify_links.py
 It exits non-zero if anything fails, so it can gate a deploy. Run it against the live
 site with `python verify_links.py --base https://allenb34.github.io/My-Portfolio/`.
 
-Last full pass: **2026-08-26 — all 18 checks passed.**
+Last full pass: **2026-08-26, all 18 checks passed.**
 
 ---
 
@@ -51,18 +51,18 @@ Last full pass: **2026-08-26 — all 18 checks passed.**
 
 ## Known gaps, deliberate
 
-**`Grammys_Campaign_Deck.pdf` — not shipped.** The supplied file is the course
+**`Grammys_Campaign_Deck.pdf` not shipped.** The supplied file is the course
 worksheet with its template scaffolding intact: "delete the options that you do not
 choose" with all four options still listed, "read the instructions on the previous
 slide", two slides headed "LevelUp (Extra Credit)", and a filename of "Copy of Copy of
 Grammys Social Media Project.pptx". Every figure on the Grammys card was checked against
-it and is correct — $150,000 budget, 1,800,000 impressions, CPA $30 vs $15 benchmark,
+it and is correct: $150,000 budget, 1,800,000 impressions, CPA $30 vs $15 benchmark,
 CTR 0.25% vs 2% (−87.5%), CPC $2.00 at benchmark, 400% traffic lift against 2.3%
 conversion. The card therefore stands on its own; only the deck button is withheld. The
-anchor is commented out in `index.html` with a restore note — restore it if a cleaned
+anchor is commented out in `index.html` with a restore note. Restore it if a cleaned
 deck is produced.
 
-**Supply-Chain Contagion — no repository link, by design.** `supply-chain-contagion/`
+**Supply-Chain Contagion: no repository link, by design.** `supply-chain-contagion/`
 has no `.git`, so there is no remote to cite and the card ships with no GitHub button
 rather than a guessed URL. Add one only after the repo exists and the remote is read
 from `.git/config`.

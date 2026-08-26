@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Allen Bautista — Analytics Portfolio</title>
-<meta name="description" content="Allen Bautista — finance and international economics at UW Foster. Sports analytics, causal inference, global risk visualization, and campaign analytics.">
+<title>Allen Bautista | Analytics Portfolio</title>
+<meta name="description" content="Allen Bautista, finance and international economics at UW Foster. Sports analytics, causal inference, global risk visualization, and campaign analytics.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -215,7 +215,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
   <div class="wrap">
     <div class="eyebrow rv">Analytics Portfolio · 2025–2026</div>
     <h1 class="rv">Allen<br><span class="l2">Bautista</span></h1>
-    <p class="lede rv">Finance &amp; International Economics at the <b>University of Washington Foster School</b>. I build analytics that answer business questions — event studies, causal inference, A/B testing, and interactive risk visualization — and I report the nulls as loudly as the wins.</p>
+    <p class="lede rv">Finance &amp; International Economics at the <b>University of Washington Foster School</b>. I build analytics that answer business questions: event studies, causal inference, A/B testing, and interactive risk visualization. I report the nulls as loudly as the wins.</p>
     <div class="hero-meta rv">
       <span><i class="dot"></i>Seattle, Washington</span>
       <span><i class="dot" style="background:var(--quant)"></i>Python · R · SQL · Excel · React</span>
@@ -247,7 +247,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
     <div class="rv">
       <p class="body-lg">Most of this portfolio started with a question a business would actually pay to answer: <b>does a marquee signing pay for itself? Does home field survive an empty stadium? Does initiating a dividend move the stock?</b> The method follows the question, not the other way around.</p>
       <p class="body-lg">That means event-study design borrowed from financial economics, difference-in-differences with parallel-trends checks, two-proportion z-tests validated against <b>statsmodels</b>, leave-one-out cross-validation hand-implemented in base R, and composite risk scoring rendered on an interactive global map.</p>
-      <p class="body-lg">It also means publishing the results that didn't work. Three of these projects return statistically insignificant findings — <b>and they say so, in the headline</b>. A portfolio that only contains wins isn't a portfolio, it's a highlight reel.</p>
+      <p class="body-lg">It also means publishing the results that didn't work. Three of these projects return statistically insignificant findings, <b>and they say so, in the headline</b>. A portfolio that only contains wins isn't a portfolio, it's a highlight reel.</p>
       <div class="chips">
         <span class="chip">Event Study</span><span class="chip">Difference-in-Differences</span>
         <span class="chip">HC3-Robust OLS</span><span class="chip">A/B Testing</span>
@@ -294,13 +294,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
         <span class="pill">Event Study</span>
         <div class="method">Python · Statsmodels · Plotly · Streamlit</div>
         <h3>NFL Marquee Player Signing ROI Analyzer</h3>
-        <p>Applied event-study methodology from financial economics to <b>12 NFL signings</b>, treating each as a quasi-natural experiment across secondary ticket pricing, merchandise rank, and search engagement. Capacity-saturated markets return <b>~4× higher</b> engagement ROI per contract dollar — six-script pipeline into a five-page Streamlit dashboard.</p>
+        <p>Applied event-study methodology from financial economics to <b>12 NFL signings</b>, treating each as a quasi-natural experiment across secondary ticket pricing, merchandise rank, and search engagement. Capacity-saturated markets return <b>~4× higher</b> engagement ROI per contract dollar. Six-script pipeline into a five-page Streamlit dashboard.</p>
         <div class="metrics">
           <div class="metric"><b>12</b><small>Signings</small></div>
           <div class="metric"><b>~4×</b><small>ROI Gap</small></div>
           <div class="metric"><b>p=0.004</b><small>HC3-Robust OLS</small></div>
         </div>
-        <div class="finding">Finding: in sold-out markets, brand lift — not attendance — is the measurable return channel.</div>
+        <div class="finding">Finding: in sold-out markets, brand lift, not attendance, is the measurable return channel.</div>
         <div class="links">
           <a class="lnk pri" href="https://nfl-signing-roi-analyzer.streamlit.app" target="_blank" rel="noopener">Live app ↗</a>
           <a class="lnk" href="https://github.com/allenb34/nfl-signing-roi-analyzer" target="_blank" rel="noopener">GitHub ↗</a>
@@ -311,7 +311,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
         <span class="pill">SQL Analytics</span>
         <div class="method">SQL · DuckDB · Python · Streamlit</div>
         <h3>Seahawks Home-Field Advantage Intelligence</h3>
-        <p>A <b>5-table normalized schema</b> on real nflverse data covering 127 Seahawks home games (2009–2023), with 7 SQL files demonstrating CTE chains, window functions, and conditional aggregation. Home win rate beat de-vigged market expectation by <b>+4.8 points</b> — directional, not significant, and presented that way.</p>
+        <p>A <b>5-table normalized schema</b> on real nflverse data covering 127 Seahawks home games (2009–2023), with 7 SQL files demonstrating CTE chains, window functions, and conditional aggregation. Home win rate beat de-vigged market expectation by <b>+4.8 points</b>. Directional, not significant, and presented that way.</p>
         <div class="metrics">
           <div class="metric"><b>127</b><small>Home Games</small></div>
           <div class="metric"><b>+4.8pts</b><small>Above Market</small></div>
@@ -327,7 +327,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
       <article class="card rv" style="--c:var(--sports)">
         <span class="pill">Forecasting</span>
         <div class="method">Python · Streamlit · IsThereAnyDeal &amp; CheapShark APIs</div>
-        <h3>Annual Sports Game Price Forecaster — Madden &amp; NBA 2K</h3>
+        <h3>Annual Sports Game Price Forecaster: Madden &amp; NBA 2K</h3>
         <p>A live pricing tool that pulls <b>12 years across 5 editions</b> per franchise from retail APIs and fits depreciation curves to project discount thresholds for unreleased titles. Weekly actuals-vs-forecast variance tracking keeps the model honest; automated briefing saves <b>~3 hrs/week</b> of manual research.</p>
         <div class="metrics">
           <div class="metric"><b>12 yrs</b><small>Pricing History</small></div>
@@ -351,15 +351,15 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
       <article class="card rv" style="--c:var(--risk)">
         <span class="pill">Composite Risk Scoring</span>
         <div class="method">React · Leaflet · Supabase · Tailwind · Lovable</div>
-        <h3>FabPressure — Semiconductor Expansion Risk Atlas</h3>
-        <p>An interactive global atlas scoring <b>24 semiconductor facilities</b> across Intel, TSMC, Samsung, Micron, TI, and GlobalFoundries in 9 countries on a composite Pressure Score built from water stress, grid carbon intensity, and disclosure confidence. Capex-scaled markers and choropleth layers surface risk concentration at a glance. Counterintuitively, <b>on-schedule fabs scored higher pressure than delayed ones</b> (0.38 vs 0.32) — flagged as exploratory given n=24.</p>
+        <h3>FabPressure: Semiconductor Expansion Risk Atlas</h3>
+        <p>An interactive global atlas scoring <b>24 semiconductor facilities</b> across Intel, TSMC, Samsung, Micron, TI, and GlobalFoundries in 9 countries on a composite Pressure Score built from water stress, grid carbon intensity, and disclosure confidence. Capex-scaled markers and choropleth layers surface risk concentration at a glance. Counterintuitively, <b>on-schedule fabs scored higher pressure than delayed ones</b> (0.38 vs 0.32), flagged as exploratory given n=24.</p>
         <div class="metrics">
           <div class="metric"><b>24</b><small>Facilities</small></div>
           <div class="metric"><b>9</b><small>Countries</small></div>
           <div class="metric"><b>6</b><small>Chipmakers</small></div>
           <div class="metric"><b>0.38/0.32</b><small>On-Sched vs Delayed</small></div>
         </div>
-        <div class="finding">Geography and execution capacity appear to outweigh environmental pressure — small sample, reported as exploratory.</div>
+        <div class="finding">Geography and execution capacity appear to outweigh environmental pressure. Small sample, reported as exploratory.</div>
         <div class="links">
           <a class="lnk pri" href="https://fab-pressure-atlas.lovable.app/" target="_blank" rel="noopener">Live atlas ↗</a>
           <a class="lnk" href="https://github.com/allenb34/fab-pressure-atlas" target="_blank" rel="noopener">GitHub ↗</a>
@@ -376,14 +376,14 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
       <article class="card rv" style="--c:var(--credit)">
         <span class="pill">Entity Resolution</span>
         <div class="method">Python · SEC 10-K Parsing · Regex Extraction · Fuzzy Entity Resolution</div>
-        <h3>Supply-Chain Contagion Model — Phase 1</h3>
+        <h3>Supply-Chain Contagion Model: Phase 1</h3>
         <p>Phase 1 of a credit-risk pipeline that extracts disclosed <b>major-customer concentration</b> statements from 10-K filings and resolves each named customer to a ticker/CIK. Two tiers are reported separately and deliberately not merged: <b>9/9 recall and precision</b> against the hand-verified known set the extractor was tuned on, and <b>65.0% independently audited entity-match accuracy</b> (26/40) on a held-out run with frozen regex across 9 unseen filer/year pairs. Contagion modeling, Merton distance-to-default, and backtesting are explicitly out of scope for this phase.</p>
         <div class="metrics">
           <div class="metric"><b>9/9</b><small>Tuned Known Set</small></div>
           <div class="metric"><b>65.0%</b><small>Held-Out Audited</small></div>
           <div class="metric"><b>32.5%</b><small>Flagged For Review</small></div>
         </div>
-        <div class="finding">A pipeline tuned against its own answer key scoring 100% is expected, not evidence — the held-out number is the honest one.</div>
+        <div class="finding">A pipeline tuned against its own answer key scoring 100% is expected, not evidence. The held-out number is the honest one.</div>
       </article>
     </div>
 
@@ -395,15 +395,15 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
     <div class="grid solo">
       <article class="card rv" style="--c:var(--product)">
         <span class="pill">Procedural Generation</span>
-        <div class="method">HTML · CSS · JavaScript · Claude Code · Replit</div>
-        <h3>Path: Water. — Browser Maze Game for charity: water</h3>
+        <div class="method">HTML · CSS · JavaScript · Replit</div>
+        <h3>Path: Water. Browser Maze Game for charity: water</h3>
         <p>A procedurally generated maze game guiding a jerry can through <b>8 themed worlds</b> mapped to real regions charity: water serves. A seeded recursive-backtracker generator with a braiding pass guarantees solvable layouts; a two-layer portal system is verified by <b>breadth-first search</b> before anything renders. Built to charity: water's actual brand guidelines, with milestone screens surfacing real impact statistics rather than invented figures.</p>
         <div class="metrics">
           <div class="metric"><b>8</b><small>Themed Worlds</small></div>
           <div class="metric"><b>BFS</b><small>Solvability Check</small></div>
           <div class="metric"><b>100%</b><small>Real Impact Stats</small></div>
         </div>
-        <div class="finding">Built for a charity: water Career Rotation assignment — real brand guidelines, real impact data.</div>
+        <div class="finding">Built for a charity: water Career Rotation assignment, with real brand guidelines and real impact data.</div>
         <div class="links">
           <a class="lnk pri" href="https://path-water-mazezip--allenb34.replit.app/" target="_blank" rel="noopener">Play the prototype ↗</a>
           <a class="lnk" href="https://github.com/allenb34/path-water-maze" target="_blank" rel="noopener">GitHub ↗</a>
@@ -427,7 +427,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
           <div class="metric"><b>+14.7%</b><small>Relative Lift</small></div>
           <div class="metric"><b>p&lt;0.001</b><small>Z-Test</small></div>
         </div>
-        <div class="finding">Decision: ship — significant lift, no guardrail degradation, mobile-first rollout.</div>
+        <div class="finding">Decision: ship. Significant lift, no guardrail degradation, mobile-first rollout.</div>
         <div class="links">
           <a class="lnk pri" href="https://social-proof-badge-readout-we8mad64gry9vbs3ajslyr.streamlit.app/" target="_blank" rel="noopener">Live demo ↗</a>
           <a class="lnk" href="https://github.com/allenb34/social-proof-badge-readout" target="_blank" rel="noopener">GitHub ↗</a>
@@ -437,8 +437,8 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
       <article class="card rv" style="--c:var(--quant)">
         <span class="pill">Causal Inference</span>
         <div class="method">Excel · LINEST · Difference-in-Differences</div>
-        <h3>Dividend Initiation — Excel-Native DiD Model</h3>
-        <p>A <b>5-treated / 5-control difference-in-differences model built entirely in Excel</b> — LINEST, FILTER/HSTACK, XLOOKUP, What-If tables, no Python or R — testing whether 2024's first-time dividend initiations caused abnormal returns. The pooled estimate is insignificant at <b>p=0.86</b> on 6,230 observations, stress-tested across 6 event windows, 5 per-pair regressions, and a parallel-trends check.</p>
+        <h3>Dividend Initiation: Excel-Native DiD Model</h3>
+        <p>A <b>5-treated / 5-control difference-in-differences model built entirely in Excel</b> (LINEST, FILTER/HSTACK, XLOOKUP, What-If tables, no Python or R), testing whether 2024's first-time dividend initiations caused abnormal returns. The pooled estimate is insignificant at <b>p=0.86</b> on 6,230 observations, stress-tested across 6 event windows, 5 per-pair regressions, and a parallel-trends check.</p>
         <div class="metrics">
           <div class="metric"><b>6,230</b><small>Observations</small></div>
           <div class="metric"><b>p=0.86</b><small>Pooled DiD</small></div>
@@ -453,14 +453,14 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
       <article class="card rv" style="--c:var(--quant)">
         <span class="pill">Regression &amp; Forecasting</span>
         <div class="method">R 4.5.1 · Base R OLS · LOOCV</div>
-        <h3>Console Economics — Launch Price &amp; Adoption Forecast</h3>
-        <p>A hand-built <b>25-console dataset</b> (generations 3–9, ~1985–2025) from BLS CPI-U, Our World in Data, and IR filings, inflation-adjusted to constant 2026 USD with an engineered DRAM/NAND cost index. Six specifications compared in base R with <b>VIF, LOOCV, and residual diagnostics hand-implemented — zero external packages</b> — delivering an implied ~$500 launch price with an $340–$725 interval.</p>
+        <h3>Console Economics: Launch Price &amp; Adoption Forecast</h3>
+        <p>A hand-built <b>25-console dataset</b> (generations 3–9, ~1985–2025) from BLS CPI-U, Our World in Data, and IR filings, inflation-adjusted to constant 2026 USD with an engineered DRAM/NAND cost index. Six specifications compared in base R with <b>VIF, LOOCV, and residual diagnostics hand-implemented, zero external packages</b>, delivering an implied ~$500 launch price with an $340–$725 interval.</p>
         <div class="metrics">
           <div class="metric"><b>25</b><small>Consoles</small></div>
           <div class="metric"><b>~$500</b><small>Implied Price</small></div>
           <div class="metric"><b>p≈0.21</b><small>Elasticity</small></div>
         </div>
-        <div class="finding">Elasticity confidence interval spans zero — presented as directional only.</div>
+        <div class="finding">Elasticity confidence interval spans zero, presented as directional only.</div>
         <div class="links">
           <a class="lnk pri" href="https://github.com/allenb34/console-economics" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
@@ -470,13 +470,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
         <span class="pill">Pre-Registered Forecasting</span>
         <div class="method">Python · Git-as-Evidence Protocol · Pre-Registration &amp; Amendment Log</div>
         <h3>Costco Comp Prediction Ledger</h3>
-        <p>A falsifiable-prediction ledger for Costco's monthly comparable sales. Two models forecast reported total-company comp before each release — a deliberately naive trailing three-month average as champion, and a challenger adding gas and FX terms (<b>+0.0984 × gas YoY, −0.2302 × FX basket YoY</b>) — and each prediction is committed to git so the <b>commit timestamp is the evidence</b>. The protocol was locked in a pre-registration document before any month was scored and is never edited; changes ship as separate, individually timestamped amendments. An in-sample backtest covers <b>70 of 88 fit-window months</b> at the 80% interval (79.5% against a target of 80%), but those are the months the coefficients were fitted on — the repository is explicit that only the live ledger counts.</p>
+        <p>A falsifiable-prediction ledger for Costco's monthly comparable sales. Two models forecast reported total-company comp before each release: a deliberately naive trailing three-month average as champion, and a challenger adding gas and FX terms (<b>+0.0984 × gas YoY, −0.2302 × FX basket YoY</b>). Each prediction is committed to git so the <b>commit timestamp is the evidence</b>. The protocol was locked in a pre-registration document before any month was scored and is never edited; changes ship as separate, individually timestamped amendments. An in-sample backtest covers <b>70 of 88 fit-window months</b> at the 80% interval (79.5% against a target of 80%), but those are the months the coefficients were fitted on, and the repository is explicit that only the live ledger counts.</p>
         <div class="metrics">
           <div class="metric"><b>1</b><small>Prediction Committed</small></div>
           <div class="metric"><b>0</b><small>Months Scored</small></div>
           <div class="metric"><b>2026-09</b><small>Window Opens</small></div>
         </div>
-        <div class="finding">Zero months scored, by design — August 2026 is a declared burn-in month and the primary window runs 2026-09 through 2027-08. The claim is protocol discipline, not predictive accuracy.</div>
+        <div class="finding">Zero months scored, by design. August 2026 is a declared burn-in month and the primary window runs 2026-09 through 2027-08. The claim is protocol discipline, not predictive accuracy.</div>
         <div class="links">
           <a class="lnk pri" href="https://github.com/allenb34/costco-comp-ledger" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
@@ -492,14 +492,14 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
       <article class="card rv" style="--c:var(--marketing)">
         <span class="pill">Media Planning</span>
         <div class="method">Campaign Strategy · CPC/CTR/CPA · Audience Segmentation</div>
-        <h3>Stage to Shelf — Grammys Paid Social Campaign &amp; Analytics</h3>
+        <h3>Stage to Shelf: Grammys Paid Social Campaign &amp; Analytics</h3>
         <p>A full paid social plan for a post-ceremony Grammys merchandise push against a <b>$150,000 budget</b>, choosing a traffic-conversion objective after diagnosing the brief as a conversion gap (400% seasonal traffic lift against 2.3% merch conversion), not an awareness gap. Eight targeting criteria mapped onto budget phasing, then <b>1.8M impressions</b> of delivery data reverse-engineered into cost-efficiency diagnostics.</p>
         <div class="metrics">
           <div class="metric"><b>$150K</b><small>Budget Modeled</small></div>
           <div class="metric"><b>1.8M</b><small>Impressions</small></div>
           <div class="metric"><b>$30 vs $15</b><small>CPA vs Benchmark</small></div>
         </div>
-        <div class="finding">Diagnosis: CPC at benchmark, CTR 87.5% below — the failure was creative relevance, not media price.</div>
+        <div class="finding">Diagnosis: CPC at benchmark, CTR 87.5% below. The failure was creative relevance, not media price.</div>
         <!-- Asset not yet supplied - see TODO-links.md. Restore this block once Grammys_Campaign_Deck.pdf is added to the repo root.
         <div class="links">
           <a class="lnk pri" href="Grammys_Campaign_Deck.pdf" target="_blank" rel="noopener">View deck (PDF) ↗</a>
