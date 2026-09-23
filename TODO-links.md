@@ -15,7 +15,7 @@ python verify_links.py
 It exits non-zero if anything fails, so it can gate a deploy. Run it against the live
 site with `python verify_links.py --base https://allenb34.github.io/My-Portfolio/`.
 
-Last full pass: **2026-08-26, all 18 checks passed.**
+Last full pass: **2026-09-22, all 20 checks passed.**
 
 ---
 
@@ -37,6 +37,8 @@ Last full pass: **2026-08-26, all 18 checks passed.**
 | `github.com/allenb34/social-proof-badge-readout` | repo | **200** | same | remote read from `social-proof-badge-readout/.git/config` | 2026-08-26 |
 | `github.com/allenb34/console-economics` | repo | **200** | same | published 2026-08-26 from local folder that had no `.git`; README renders | 2026-08-26 |
 | `github.com/allenb34/costco-comp-ledger` | repo | **200** | same | remote read from `costco-comp-ledger/.git/config` | 2026-08-26 |
+| `nba-game-predictor-six.vercel.app` | deployment | **200** | same | anonymous GET, browser UA | 2026-09-22 |
+| `github.com/allenb34/nba-game-predictor` | repo | **200** | same | remote read from `nba-game-predictor/.git/config`; repo created and pushed 2026-09-22 | 2026-09-22 |
 | `linkedin.com/in/allen-bautista-279778323/` | profile | **200** | same | anonymous GET | 2026-08-26 |
 | `github.com/allenb34` | profile | **200** | same | anonymous GET | 2026-08-26 |
 

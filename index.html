@@ -231,8 +231,8 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
 
 <div class="strip">
   <div class="wrap"><div class="strip-in">
-    <div class="stat rv"><b>11</b><small>Projects</small></div>
-    <div class="stat rv"><b>6</b><small>Live Deployments</small></div>
+    <div class="stat rv"><b>12</b><small>Projects</small></div>
+    <div class="stat rv"><b>7</b><small>Live Deployments</small></div>
     <div class="stat rv"><b>6</b><small>Analytics Domains</small></div>
     <div class="stat rv"><b>3.6</b><small>GPA · Dean's List</small></div>
   </div></div>
@@ -281,13 +281,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
   <div class="wrap">
     <div class="rv" style="margin-bottom:56px">
       <div class="sec-label">Selected Work</div>
-      <h2>Eleven projects across six domains.</h2>
+      <h2>Twelve projects across six domains.</h2>
     </div>
 
     <!-- SPORTS -->
     <div class="cat-head rv" style="--c:var(--sports)">
       <div class="cat-title">Sports Analytics</div>
-      <div class="cat-count">3 Projects · 3 Live</div>
+      <div class="cat-count">4 Projects · 4 Live</div>
     </div>
     <div class="grid">
       <article class="card rv" style="--c:var(--sports)">
@@ -338,6 +338,23 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
         <div class="links">
           <a class="lnk pri" href="https://madden-2k-forecaster.streamlit.app" target="_blank" rel="noopener">Live app ↗</a>
           <a class="lnk" href="https://github.com/allenb34/madden-2k-forecaster" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="card rv" style="--c:var(--sports)">
+        <span class="pill">Classification</span>
+        <div class="method">Python · scikit-learn · nba_api · Flask · Vercel</div>
+        <h3>NBA Game Win Probability Predictor</h3>
+        <p>Predicted NBA game winners with <b>69.3% test accuracy</b> against a 54.9% always-favorite baseline (ROC AUC 0.747), training a leak-free logistic regression on <b>10 seasons</b> of team performance data (2016-17 to 2025-26, 10,415 games) with a strict chronological train, validation, and test split. Deployed as a live tool built on the same trailing-10 and season-to-date Offensive, Defensive, and Net Rating, pace, and rest-day features: pick two teams and a date, get a calibrated win probability and the statistical factors behind it.</p>
+        <div class="metrics">
+          <div class="metric"><b>10,415</b><small>Games Modeled</small></div>
+          <div class="metric"><b>69.3%</b><small>Test Accuracy</small></div>
+          <div class="metric"><b>0.747</b><small>ROC AUC</small></div>
+        </div>
+        <div class="finding">Finding: season-long net rating and rest advantage predict outcomes better than a team's last 10 games.</div>
+        <div class="links">
+          <a class="lnk pri" href="https://nba-game-predictor-six.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
+          <a class="lnk" href="https://github.com/allenb34/nba-game-predictor" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </article>
     </div>
