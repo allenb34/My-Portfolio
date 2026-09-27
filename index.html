@@ -231,8 +231,8 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
 
 <div class="strip">
   <div class="wrap"><div class="strip-in">
-    <div class="stat rv"><b>12</b><small>Projects</small></div>
-    <div class="stat rv"><b>7</b><small>Live Deployments</small></div>
+    <div class="stat rv"><b>16</b><small>Projects</small></div>
+    <div class="stat rv"><b>10</b><small>Live Deployments</small></div>
     <div class="stat rv"><b>6</b><small>Analytics Domains</small></div>
     <div class="stat rv"><b>3.6</b><small>GPA · Dean's List</small></div>
   </div></div>
@@ -281,13 +281,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
   <div class="wrap">
     <div class="rv" style="margin-bottom:56px">
       <div class="sec-label">Selected Work</div>
-      <h2>Twelve projects across six domains.</h2>
+      <h2>Sixteen projects across six domains.</h2>
     </div>
 
     <!-- SPORTS -->
     <div class="cat-head rv" style="--c:var(--sports)">
       <div class="cat-title">Sports Analytics</div>
-      <div class="cat-count">4 Projects · 4 Live</div>
+      <div class="cat-count">8 Projects · 7 Live</div>
     </div>
     <div class="grid">
       <article class="card rv" style="--c:var(--sports)">
@@ -355,6 +355,74 @@ footer{border-top:1px solid var(--line);padding:44px 0 56px}
         <div class="links">
           <a class="lnk pri" href="https://nba-game-predictor-six.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
           <a class="lnk" href="https://github.com/allenb34/nba-game-predictor" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="card rv" style="--c:var(--sports)">
+        <span class="pill">BI Dashboard</span>
+        <div class="method">JavaScript · Chart.js · balldontlie.io API</div>
+        <h3>NBA KPI Dashboard</h3>
+        <p>A framework-free business-intelligence dashboard covering the 2025–26 NBA season: KPI tiles for win%, point differential, and league rank per team, rolling 10-game trend charts, and a full <b>30-team</b> sortable standings table with side-by-side team comparison. Vanilla HTML, CSS, and JavaScript with Chart.js as the only dependency.</p>
+        <div class="metrics">
+          <div class="metric"><b>30</b><small>Teams Tracked</small></div>
+          <div class="metric"><b>10-Game</b><small>Rolling Window</small></div>
+          <div class="metric"><b>0</b><small>Frameworks</small></div>
+        </div>
+        <div class="finding">Built dependency-light on purpose: point differential substitutes for a possession-adjusted net rating, and that tradeoff is documented rather than hidden.</div>
+        <div class="links">
+          <a class="lnk pri" href="https://allenb34.github.io/nba-kpi-dashboard/" target="_blank" rel="noopener">Live app ↗</a>
+          <a class="lnk" href="https://github.com/allenb34/nba-kpi-dashboard" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="card rv" style="--c:var(--sports)">
+        <span class="pill">Classification</span>
+        <div class="method">Python · scikit-learn · Random Forest · football-data.org</div>
+        <h3>Premier League Match Outcome Predictor</h3>
+        <p>A Random Forest classifier predicting Premier League match results (Home/Draw/Away) from historical form, rebuilt on football-data.org after the original data source went down mid-project. Beats a home-favorite baseline on decisive results, then diagnoses exactly why draws remain <b>structurally unpredictable</b> with the available feature set.</p>
+        <div class="metrics">
+          <div class="metric"><b>46.4%</b><small>Accuracy</small></div>
+          <div class="metric"><b>42.5%</b><small>Baseline</small></div>
+          <div class="metric"><b>7.8%</b><small>Draw Recall</small></div>
+        </div>
+        <div class="finding">Precision@k diagnostics show the draw problem isn't a threshold to tune — the feature set has no signal for evenly matched games.</div>
+        <div class="links">
+          <a class="lnk pri" href="https://allenb34.github.io/epl-match-outcome-predictor/" target="_blank" rel="noopener">Live app ↗</a>
+          <a class="lnk" href="https://allenb34.github.io/epl-match-outcome-predictor/performance.html" target="_blank" rel="noopener">Performance ↗</a>
+          <a class="lnk" href="https://github.com/allenb34/epl-match-outcome-predictor" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="card rv" style="--c:var(--sports)">
+        <span class="pill">Regression</span>
+        <div class="method">Python · scikit-learn · football-data.org · Transfermarkt Data</div>
+        <h3>Premier League Transfer Value Predictor</h3>
+        <p>Predicts player market value from age, goals, and assists, matching football-data.org performance stats to Transfermarkt valuations via <b>club-scoped name resolution</b>. Linear Regression and Random Forest tied on held-out R², so the simpler model won. A weekly GitHub Actions job refreshes data and retrains automatically.</p>
+        <div class="metrics">
+          <div class="metric"><b>R²=0.362</b><small>Linear Model</small></div>
+          <div class="metric"><b>302</b><small>Players</small></div>
+          <div class="metric"><b>19.2%</b><small>Within ±20%</small></div>
+        </div>
+        <div class="finding">Underestimates genuine outliers by design — Haaland priced 75% below actual value — and the writeup treats that as the headline finding, not a footnote.</div>
+        <div class="links">
+          <a class="lnk pri" href="https://pl-transfer-value-predictor.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
+          <a class="lnk" href="https://github.com/allenb34/pl-transfer-value-predictor" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="card rv" style="--c:var(--sports)">
+        <span class="pill">Clustering</span>
+        <div class="method">Python · scikit-learn · K-Means · Streamlit · FBref</div>
+        <h3>Premier League Player Scouting &amp; Similarity Engine</h3>
+        <p>Finds statistically similar players via nearest-neighbor matching and groups <b>356 outfield players</b> into four playstyle clusters selected by silhouette score. After three automated scraping approaches were blocked by Cloudflare, the pipeline falls back to FBref's official manual export, scoping its claims to exactly what that free-tier data supports.</p>
+        <div class="metrics">
+          <div class="metric"><b>356</b><small>Players Clustered</small></div>
+          <div class="metric"><b>k=4</b><small>Playstyle Clusters</small></div>
+          <div class="metric"><b>0.217</b><small>Silhouette Score</small></div>
+        </div>
+        <div class="finding">Documents which stats the data can't see (no passing, dribbling, or xG) rather than implying the clusters capture more than they do.</div>
+        <div class="links">
+          <a class="lnk pri" href="https://github.com/allenb34/pl-player-scouting" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </article>
     </div>
